@@ -401,16 +401,17 @@ once you get it out of your file.</p>
 </div>
 <section id="environment"><h2 class="section-heading">Environment<a class="anchor" aria-label="anchor" href="#environment"></a>
 </h2>
-<hr class="half-width"><p>We’ll assume that you have a working, modern python environmnt such
-as the Python docker container you installed, called `my_python1. We
-leave it up to you whether or not you write and execute this code in a
-script or as a Jupyter notebook.</p>
+<hr class="half-width"><p>Use the Python environment that you set up in the previous two lesson
+pages, such as your <code>my_python</code> docker container. We leave it
+up to you whether or not you write and execute this code in a script or
+as a Jupyter notebook.</p>
 </section><section id="numpy-arrays-a-review"><h2 class="section-heading">Numpy arrays: a review<a class="anchor" aria-label="anchor" href="#numpy-arrays-a-review"></a>
 </h2>
 <hr class="half-width"><p>Before we dive into <code>awkward</code> lets review some of the
 awsome aspects of <code>numpy</code> arrays…and also examine their
 limitations.</p>
-<p>Let’s import <code>numpy</code>.</p>
+<p>Let’s import <code>numpy</code> (if you have not already done that in
+this python session).</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -517,13 +518,13 @@ jumped straight to this lesson, please go back and review how to access
 the file over the network or by downloading it.</p>
 </section><section id="open-the-file"><h2 class="section-heading">Open the file<a class="anchor" aria-label="anchor" href="#open-the-file"></a>
 </h2>
-<hr class="half-width"><div id="stop-prerequisite" class="callout prereq">
+<hr class="half-width"><div id="stop" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
-<div id="stop-prerequisite" class="callout-inner">
+<div id="stop" class="callout-inner">
 <h3 class="callout-title">
-<em>Stop!</em> Prerequisite:<a class="anchor" aria-label="anchor" href="#stop-prerequisite"></a>
+<em>Stop!</em><a class="anchor" aria-label="anchor" href="#stop"></a>
 </h3>
 <div class="callout-content">
 <p>If you haven’t already, make sure you have run through the <a href="https://cms-opendata-workshop.github.io/workshop2024-lesson-cpp-root-python/06-uproot/index.html" class="external-link">previous
@@ -658,7 +659,7 @@ there is a faster way!</p>
   Python code (event loop)
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -765,7 +766,7 @@ how much faster using the built-in awkward functions can be:</p>
   Python code (awkward array)
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

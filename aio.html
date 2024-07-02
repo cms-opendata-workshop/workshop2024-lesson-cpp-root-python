@@ -648,7 +648,7 @@ on <a href="https://en.wikipedia.org/wiki/Standard_streams" class="external-link
   Full source code file for hello_world.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2212,9 +2212,9 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="other-resources">Other resources<a class="anchor" aria-label="anchor" href="#other-resources"></a>
-</h1>
+<section id="other-resources"><h2 class="section-heading">Other resources<a class="anchor" aria-label="anchor" href="#other-resources"></a>
+</h2>
+<hr class="half-width">
 <p>Before we go any further, we point out that this episode and the next
 are only the <em>most basic</em> introductions to <code>uproot</code>
 and <code>awkward</code>. There is a plethora of material that go much
@@ -2227,14 +2227,13 @@ uproot and awkward tutorial</a></li>
 <li>
 <a href="https://github.com/jpivarski-talks/2020-06-08-uproot-awkward-columnar-hats" class="external-link">Uproot,
 awkward, and columnar analysis</a> from Jim Pivarski.</li>
-</ul>
-</div>
-<div class="section level1">
-<h1 id="how-to-type-these-commands">How to type these commands?<a class="anchor" aria-label="anchor" href="#how-to-type-these-commands"></a>
-</h1>
-<p>Now that you’ve installed the necessary python modules you can choose
-to write and execute the code however you like. There are a number of
-options, but we will point out two here.</p>
+</ul></section><section id="how-to-type-these-commands"><h2 class="section-heading">How to type these commands?<a class="anchor" aria-label="anchor" href="#how-to-type-these-commands"></a>
+</h2>
+<hr class="half-width">
+<p>Now that you’ve installed the necessary python modules in your
+<code>my_python</code> container you can choose to write and execute the
+code however you like. There are a number of options, but we will point
+out two here.</p>
 <ul>
 <li>
 <p><a href="https://jupyter.org/" class="external-link">Jupyter notebook</a>. This
@@ -2281,10 +2280,9 @@ the output</p>
 <pre class="output" tabindex="0"><code>Hello world!</code></pre>
 </div>
 <p>We leave it to you to decide which approach you prefer.</p>
-</div>
-<div class="section level1">
-<h1 id="open-a-file">Open a file<a class="anchor" aria-label="anchor" href="#open-a-file"></a>
-</h1>
+</section><section id="open-a-file"><h2 class="section-heading">Open a file<a class="anchor" aria-label="anchor" href="#open-a-file"></a>
+</h2>
+<hr class="half-width">
 <p>Let’s open a ROOT file! If you’re writing a python script, let’s call
 it <code>open_root_file.py</code> and if you’re using a Jupyter
 notebook, let’s call it <code>open_root_file.ipynb</code>. If you are
@@ -2334,7 +2332,7 @@ command in the bash terminal.</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>curl http:<span class="op">//</span>opendata.cern.ch<span class="op">/</span>record<span class="op">/</span><span class="dv">12361</span><span class="op">/</span>files<span class="op">/</span>SMHiggsToZZTo4L.root <span class="op">--</span>output SMHiggsToZZTo4L.root</span></code></pre>
 </div>
-<p>Alternatively, you can follow <a href="http://opendata.cern.ch/record/12361" class="external-link">this link</a> to the data
+<p>Alternatively, you can follow <a href="https://opendata.cern.ch/record/12361" class="external-link">this link</a> to the data
 record on the CERN Open Data Portal. If you scroll down to the bottom of
 the page and click the <strong>Download</strong> button.</p>
 <p>For the remainder of this tutorial you will want the file to be in
@@ -2351,6 +2349,9 @@ to be</p>
 </div>
 </div>
 </div>
+</section><section id="investigate-the-file"><h2 class="section-heading">Investigate the file<a class="anchor" aria-label="anchor" href="#investigate-the-file"></a>
+</h2>
+<hr class="half-width">
 <p>So you’ve opened the file with <code>uproot</code>. What is this
 <code>infile</code> object? Let’s add the following code</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -2480,7 +2481,7 @@ easier than installing the full ROOT ecosystem.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div></section><section id="aio-07-awkward"><p>Content from <a href="07-awkward.html">Using awkward arrays to analyze HEP data</a></p>
+</section></section><section id="aio-07-awkward"><p>Content from <a href="07-awkward.html">Using awkward arrays to analyze HEP data</a></p>
 <hr>
 <p>Last updated on 2024-07-02 |
         
@@ -2544,17 +2545,18 @@ once you get it out of your file.</p>
 <section id="environment"><h2 class="section-heading">Environment<a class="anchor" aria-label="anchor" href="#environment"></a>
 </h2>
 <hr class="half-width">
-<p>We’ll assume that you have a working, modern python environmnt such
-as the Python docker container you installed, called `my_python1. We
-leave it up to you whether or not you write and execute this code in a
-script or as a Jupyter notebook.</p>
+<p>Use the Python environment that you set up in the previous two lesson
+pages, such as your <code>my_python</code> docker container. We leave it
+up to you whether or not you write and execute this code in a script or
+as a Jupyter notebook.</p>
 </section><section id="numpy-arrays-a-review"><h2 class="section-heading">Numpy arrays: a review<a class="anchor" aria-label="anchor" href="#numpy-arrays-a-review"></a>
 </h2>
 <hr class="half-width">
 <p>Before we dive into <code>awkward</code> lets review some of the
 awsome aspects of <code>numpy</code> arrays…and also examine their
 limitations.</p>
-<p>Let’s import <code>numpy</code>.</p>
+<p>Let’s import <code>numpy</code> (if you have not already done that in
+this python session).</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2663,13 +2665,13 @@ the file over the network or by downloading it.</p>
 </section><section id="open-the-file"><h2 class="section-heading">Open the file<a class="anchor" aria-label="anchor" href="#open-the-file"></a>
 </h2>
 <hr class="half-width">
-<div id="stop-prerequisite" class="callout prereq">
+<div id="stop" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
-<div id="stop-prerequisite" class="callout-inner">
+<div id="stop" class="callout-inner">
 <h3 class="callout-title">
-<em>Stop!</em> Prerequisite:<a class="anchor" aria-label="anchor" href="#stop-prerequisite"></a>
+<em>Stop!</em><a class="anchor" aria-label="anchor" href="#stop"></a>
 </h3>
 <div class="callout-content">
 <p>If you haven’t already, make sure you have run through the <a href="https://cms-opendata-workshop.github.io/workshop2024-lesson-cpp-root-python/06-uproot/index.html" class="external-link">previous
@@ -2804,7 +2806,7 @@ there is a faster way!</p>
   Python code (event loop)
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2911,7 +2913,7 @@ how much faster using the built-in awkward functions can be:</p>
   Python code (awkward array)
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
