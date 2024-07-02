@@ -207,6 +207,77 @@ start_vnc
 
 and connect to it with the default password `cms.cern`.
 
+To inspect this new ROOT file, we'll launch CINT for the first time and create a
+[`TBrowser` object](https://root.cern.ch/doc/master/classTBrowser.html).
+
+On the command line, run the following to launch CINT and attach our new ROOT file.
+
+```bash
+root -l output.root
+```
+
+```output
+root [0]
+Attaching file output.root as _file0...
+root [1]
+```
+
+You can either type C++/ROOT commands or launch a `TBrowser`, which is a graphical tool
+to inspect ROOT files. Inside this CINT environment, type the following
+(without the `root [1]`, as that is just the ROOT/CINT prompt).
+
+```cpp
+root [1] TBrowser b;
+```
+
+You should see the `TBrowser` pop up!
+
+:::::::::::::::::::: callout
+
+## TBrowser
+
+![](fig/tbrowser_screenshot_00.png)
+
+::::::::::::::::::::
+
+If we double click on `output.root`, in the left-hand menu and then the `h1;1` that appears below it, we
+should see the following plot appear!
+
+:::::::::::::::::::: callout
+
+## Inspecting the ROOT file contents
+
+![](fig/tbrowser_screenshot_01.png)
+
+::::::::::::::::::::
+
+Quit ROOT by choosing the “Quit Root” option from Browser menu of the TBrowser window or by typing `.q` in the ROOT prompt.
+
+:::::::::::::::::::::::::: challenge
+
+## Work assignment: investigating data in ROOT files
+
+In the previous episode you generated a file called `tree.root`.  It has some variables which were stored in a TTree called `t1`.  Let's explore the variables contained in this tree by using one of the methods available for TTree objects.  You can find out more about these methods directly from the [ROOT TTree class documentation](https://root.cern.ch/doc/master/classTTree.html).
+
+Open the `tree.root` file with ROOT:
+
+```bash
+root -l tree.root
+```
+
+Now, dump the content of the `t1` tree with the method `Print`.  Note that, by opening the file, the ROOT tree in there is automatically loaded.
+
+``cpp
+root [0]
+Attaching file tree.root as _file0...
+root [1] t1->Print()
+```
+
+Please copy the output this statement generates and paste it into the corresponding section in our [assignment form](https://docs.google.com/forms/d/e/1FAIpQLSdxsc-aIWqUyFA0qTsnbfQrA6wROtAxC5Id4sxH08STTl8e5w/viewform); remember you must sign in and <strong style="color: red;">click on the submit button</strong> in order to save your work.  You can go back to edit the form at any time.
+Then, quit ROOT.
+
+::::::::::::::::::::::::::::::::
+
 ::::::::::::::::: keypoints
 - You can quickly inspect your data using just ROOT
 - A simple ROOT script is often all you need for diagnostic work
