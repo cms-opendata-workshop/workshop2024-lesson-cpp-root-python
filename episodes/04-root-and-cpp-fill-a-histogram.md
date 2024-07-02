@@ -75,6 +75,7 @@ to the file, and then close the output file.
 The final version of `fill_histogram.cc` will look like this:
 
 :::::::::::::::::::::::::: spoiler
+
 ## Source code for `fill_histogram.cc`
 
 ```cpp
@@ -231,21 +232,28 @@ root [1] TBrowser b;
 You should see the `TBrowser` pop up!
 
 :::::::::::::::::::: callout
+
 ## TBrowser
+
 ![](fig/tbrowser_screenshot_00.png)
+
 ::::::::::::::::::::
 
 If we double click on `output.root`, in the left-hand menu and then the `h1;1` that appears below it, we
 should see the following plot appear!
 
 :::::::::::::::::::: callout
+
 ## Inspecting the ROOT file contents
+
 ![](fig/tbrowser_screenshot_01.png)
+
 ::::::::::::::::::::
 
 Quit ROOT by choosing the “Quit Root” option from Browser menu of the TBrowser window or by typing `.q` in the ROOT prompt.
 
 :::::::::::::::::::::::::: challenge
+
 ## Work assignment: investigating data in ROOT files
 
 In the previous episode you generated a file called `tree.root`.  It has some variables which were stored in a TTree called `t1`.  Let's explore the variables contained in this tree by using one of the methods available for TTree objects.  You can find out more about these methods directly from the [ROOT TTree class documentation](https://root.cern.ch/doc/master/classTTree.html).
@@ -266,6 +274,7 @@ root [1] t1->Print()
 
 Please copy the output this statement generates and paste it into the corresponding section in our [assignment form](https://docs.google.com/forms/d/e/1FAIpQLSdxsc-aIWqUyFA0qTsnbfQrA6wROtAxC5Id4sxH08STTl8e5w/viewform); remember you must sign in and <strong style="color: red;">click on the submit button</strong> in order to save your work.  You can go back to edit the form at any time.
 Then, quit ROOT.
+
 ::::::::::::::::::::::::::::::::
 
 ## Using a ROOT script
@@ -303,6 +312,7 @@ we "change directory" to the canvas and draw our histogram. We can even save it 
 Your `fill_histogram_SCRIPT.C` should look like this:
 
 :::::::::::::::::::::::::: spoiler
+
 ## Source code for `fill_histogram_SCRIPT.C`
 
 ```cpp
@@ -396,8 +406,11 @@ root -l fill_histogram_SCRIPT.C
 You'll be popped into the CINT environment and you should see the following plot pop up!
 
 ::::::::::::: callout
+
 ## TBrowser
+
 ![](fig/h_pt.png)
+
 ::::::::::::
 
 Exit from the container. If you are using a container with VNC, first stop VNC with `stop_vnc`.

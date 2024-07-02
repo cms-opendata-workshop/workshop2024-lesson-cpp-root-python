@@ -1,7 +1,7 @@
 ---
 title: "Using awkward arrays to analyze HEP data"
-teaching: 10 min
-exercises: 10 min
+teaching: 10
+exercises: 10
 ---
 
 :::::::::::: questions
