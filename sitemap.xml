@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/02-cpp-hello-world.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/03-root-and-cpp-read-and-write.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/04-root-and-cpp-fill-a-histogram.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/05-going-further-with-pyroot.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/06-uproot.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/07-awkward.html</loc>
+  </url>
+  <url>
     <loc>https://cms-opendata-workshop.github.io/workbench-template-md/404.html</loc>
   </url>
   <url>
@@ -17,6 +35,24 @@
   </url>
   <url>
     <loc>https://cms-opendata-workshop.github.io/workbench-template-md/index.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/02-cpp-hello-world.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/03-root-and-cpp-read-and-write.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/04-root-and-cpp-fill-a-histogram.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/05-going-further-with-pyroot.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/06-uproot.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/07-awkward.html</loc>
   </url>
   <url>
     <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/404.html</loc>
