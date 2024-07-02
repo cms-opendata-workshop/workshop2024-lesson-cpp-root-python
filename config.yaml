@@ -63,7 +63,7 @@ contact: 'cms-dpoa-coordinator@cern.ch' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- 01-introduction.md
+- introduction.md
 - 02-cpp-hello-world.md
 - 03-root-and-cpp-read-and-write.md
 - 04-root-and-cpp-fill-a-histogram.md
