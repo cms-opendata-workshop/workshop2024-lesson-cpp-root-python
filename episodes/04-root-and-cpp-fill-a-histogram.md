@@ -74,6 +74,138 @@ to the file, and then close the output file.
 
 The final version of `fill_histogram.cc` will look like this:
 
+:::::::::::::::::::::::::: spoiler
+
+## Source code for `fill_histogram.cc`
+
+```cpp
+#include<cstdio>
+#include<cstdlib>
+#include<iostream>
+
+#include "TROOT.h"
+#include "TTree.h"
+#include "TFile.h"
+#include "TRandom.h"
+#include "TH1F.h"
+
+int main() {
+
+  // Here's the input file
+  // Without the 'recreate' argument, ROOT will assume this file exists to be read in.
+  TFile f("tree.root");
+
+  // Let's make an output file which we'll use to save our
+  // histogram
+  TFile fout("output.root","recreate");
+
+  // We define an histogram for the transverse momentum of the jets
+  // The arguments are as follow
+  // * Internal name of the histogram
+  // * Title that will be used if the histogram is plotted
+  // * Number of bins
+  // * Low edge of the lowest bin
+  // * High edge of the highest bin
+  TH1F h1("h1","jet pT (GeV/c)",50,0,150);
+
+  // We will now "Get" the tree from the file and assign it to
+  // a new local variable.
+  TTree *input_tree = (TTree*)f.Get("t1");
+
+  Float_t met; // Missing energy in the transverse direction.
+
+  Int_t njets; // Necessary to keep track of the number of jets
+  // We'll define these assuming we will not write information for
+  // more than 16 jets. We'll have to check for this in the code otherwise
+  // it could crash!
+  Float_t pt[16];
+  Float_t eta[16];
+  Float_t phi[16];
+
+  // Assign these variables to specific branch addresses
+  input_tree->SetBranchAddress("met",&met);
+  input_tree->SetBranchAddress("njets",&njets);
+  input_tree->SetBranchAddress("pt",&pt);
+  input_tree->SetBranchAddress("eta",&eta);
+  input_tree->SetBranchAddress("phi",&phi);
+
+  // Get the number of events in the file
+  Int_t nevents = input_tree->GetEntries();
+
+  for (Int_t i=0;i<nevents;i++) {
+
+      // Get the values for the i`th event and fill all our local variables
+      // that were assigned to TBranches
+      input_tree->GetEntry(i);
+
+      // Print the number of jets in this event
+      printf("%d\n",njets);
+
+      // Print out the momentum for each jet in this event
+      for (Int_t j=0;j<njets;j++) {
+          printf("%f,%f,%f\n",pt[j], eta[j], phi[j]);
+
+          // Fill the histogram with each value of pT
+          h1.Fill(pt[j]);
+      }
+  }
+
+  fout.cd();
+  h1.Write();
+  fout.Close();
+
+  return 0;
+}
+```
+
+::::::::::::::::::::::::::::::
+
+We will modify our `Makefile` accordingly.
+
+```makefile
+CC=g++
+
+CFLAGS=-c -g -Wall `root-config --cflags`
+
+LDFLAGS=`root-config --glibs`
+
+all: write_ROOT_file read_ROOT_file fill_histogram
+
+write_ROOT_file: write_ROOT_file.cc
+    $(CC) $(CFLAGS) -o write_ROOT_file.o write_ROOT_file.cc
+    $(CC) -o write_ROOT_file write_ROOT_file.o $(LDFLAGS)
+
+read_ROOT_file: read_ROOT_file.cc
+    $(CC) $(CFLAGS) -o read_ROOT_file.o read_ROOT_file.cc
+    $(CC) -o read_ROOT_file read_ROOT_file.o $(LDFLAGS)
+
+fill_histogram: fill_histogram.cc
+    $(CC) $(CFLAGS) -o fill_histogram.o fill_histogram.cc
+    $(CC) -o fill_histogram fill_histogram.o $(LDFLAGS)
+
+clean:
+    rm -f ./*~ ./*.o ./write_ROOT_file
+    rm -f ./*~ ./*.o ./read_ROOT_file
+    rm -f ./*~ ./*.o ./fill_histogram
+```
+
+And then compile and run it, remember to do it in the container!
+
+```bash
+make fill_histogram
+./fill_histogram
+```
+
+The output on the screen should not look different. However, if you list the contents of the directory,
+you'll see a new file, `output.root`!
+
+If you are using a container with VNC, now it is time to start the graphics window with
+
+```bash
+start_vnc
+```
+
+and connect to it with the default password `cms.cern`.
 
 ::::::::::::::::: keypoints
 - You can quickly inspect your data using just ROOT
