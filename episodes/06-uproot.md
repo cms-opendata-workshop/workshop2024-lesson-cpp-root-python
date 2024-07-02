@@ -15,7 +15,7 @@ exercises: 10
 :::::::::::
 
 
-# Other resources
+## Other resources
 
 Before we go any further, we point out that this episode and the next are only the
 *most basic* introductions to `uproot` and `awkward`. There is a plethora of material
@@ -26,9 +26,9 @@ that go much deeper and we list just a few here.
 * [Uproot, awkward, and columnar analysis](https://github.com/jpivarski-talks/2020-06-08-uproot-awkward-columnar-hats) 
 from Jim Pivarski.
 
-# How to type these commands?
+## How to type these commands?
 
-Now that you've installed the necessary python modules you can choose to write and execute the code however 
+Now that you've installed the necessary python modules in your `my_python` container you can choose to write and execute the code however 
 you like. There are a number of options, but we will point out two here. 
 
 * [Jupyter notebook](https://jupyter.org/). This provides an editor and an evironment in which to run
@@ -65,7 +65,7 @@ Hello world!
 We leave it to you to decide which approach you prefer.
 
 
-# Open a file
+## Open a file
 
 Let's open a ROOT file! 
 If you're writing a python script, let's call it `open_root_file.py` and if you're using
@@ -106,7 +106,7 @@ You can execute the following command in the bash terminal.
 curl http://opendata.cern.ch/record/12361/files/SMHiggsToZZTo4L.root --output SMHiggsToZZTo4L.root
 ```
 
-Alternatively, you can follow [this link](http://opendata.cern.ch/record/12361) to the data record
+Alternatively, you can follow [this link](https://opendata.cern.ch/record/12361) to the data record
 on the CERN Open Data Portal. If you scroll down to the bottom of the page and click 
 the **Download** button. 
 
@@ -119,6 +119,8 @@ To read in the file, you'll change one line to define the input file to be
 infile_name = 'SMHiggsToZZTo4L.root'
 ```
 ::::::::::::::::::
+
+## Investigate the file
 
 So you've opened the file with `uproot`. What is this `infile` object? Let's add the following code
 
