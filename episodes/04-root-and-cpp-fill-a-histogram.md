@@ -267,7 +267,7 @@ root -l tree.root
 
 Now, dump the content of the `t1` tree with the method `Print`.  Note that, by opening the file, the ROOT tree in there is automatically loaded.
 
-``cpp
+```cpp
 root [0]
 Attaching file tree.root as _file0...
 root [1] t1->Print()
@@ -277,6 +277,144 @@ Please copy the output this statement generates and paste it into the correspond
 Then, quit ROOT.
 
 ::::::::::::::::::::::::::::::::
+
+## Using a ROOT script
+
+We could also loop over all the events, create and save the histogram, but also
+draw the histogram onto a `TCanvas` object and have it pop up, all from a ROOT
+script and the CINT.
+
+First, let's copy over our C++ source code into a C++ script.
+
+```bash
+cp fill_histogram.cc fill_histogram_SCRIPT.C
+```
+
+Next we'll remove the headers at the beginning and even get rid of the `int main` designation,
+though we keep the curly brackets.
+
+We'll also define a `TCanvas` object on which we'll plot our histogram. After we do that,
+we "change directory" to the canvas and draw our histogram. We can even save it to a
+`.png` file.
+
+```cpp
+   // Declare a TCanvas with the following arguments
+   // * Internal name of the TCanvas object
+   // * Title to be displayed when it is drawn
+   // * Width of the canvas
+   // * Height of the canvas
+   TCanvas *c1 = new TCanvas("c1", "Canvas on which to display our histogram", 800, 400);
+
+   c1->cd(0);
+   h1.Draw();
+   c1->SaveAs("h_pt.png");
+```
+
+Your `fill_histogram_SCRIPT.C` should look like this:
+
+:::::::::::::::::::::::::: spoiler
+
+## Source code for `fill_histogram_SCRIPT.C`
+
+```cpp
+{
+
+  // Here's the input file
+  // Without the 'recreate' argument, ROOT will assume this file exists to be read in.
+  TFile f("tree.root");
+
+  // Let's make an output file which we'll use to save our
+  // histogram
+  TFile fout("output.root","recreate");
+
+  // We define an histogram for the transverse momentum of the jets
+  // The arguments are as follow
+  // * Internal name of the histogram
+  // * Title that will be used if the histogram is plotted
+  // * Number of bins
+  // * Low edge of the lowest bin
+  // * High edge of the highest bin
+  TH1F h1("h1","jet pT (GeV/c)",50,0,150);
+
+  // We will now "Get" the tree from the file and assign it to
+  // a new local variable.
+  TTree *input_tree = (TTree*)f.Get("t1");
+
+  Float_t met; // Missing energy in the transverse direction.
+
+  Int_t njets; // Necessary to keep track of the number of jets
+
+  // We'll define these assuming we will not write information for
+  // more than 16 jets. We'll have to check for this in the code otherwise
+  // it could crash!
+  Float_t pt[16];
+  Float_t eta[16];
+  Float_t phi[16];
+
+     // Assign these variables to specific branch addresses
+  input_tree->SetBranchAddress("met",&met);
+  input_tree->SetBranchAddress("njets",&njets);
+  input_tree->SetBranchAddress("pt",&pt);
+  input_tree->SetBranchAddress("eta",&eta);
+  input_tree->SetBranchAddress("phi",&phi);
+
+  // Get the number of events in the file
+  Int_t nevents = input_tree->GetEntries();
+
+  for (Int_t i=0;i<nevents;i++) {
+
+      // Get the values for the i`th event and fill all our local variables
+      // that were assigned to TBranches
+      input_tree->GetEntry(i);
+
+      // Print the number of jets in this event
+      printf("%d\n",njets);
+
+      // Print out the momentum for each jet in this event
+      for (Int_t j=0;j<njets;j++) {
+          printf("%f,%f,%f\n",pt[j], eta[j], phi[j]);
+
+          // Fill the histogram with each value of pT
+          h1.Fill(pt[j]);
+      }
+  }
+
+  // Declare a TCanvas with the following arguments
+  // * Internal name of the TCanvas object
+  // * Title to be displayed when it is drawn
+  // * Width of the canvas
+  // * Height of the canvas
+  TCanvas *c1 = new TCanvas("c1", "Canvas on which to display our histogram", 800, 400);
+
+  c1->cd(0);
+  h1.Draw();
+  c1->SaveAs("h_pt.png");
+
+  fout.cd();
+  h1.Write();
+  fout.Close();
+
+}
+```
+:::::::::::::::::::::::::::::
+
+To run this, you need only type the following on the command line.
+
+```bash
+root -l fill_histogram_SCRIPT.C
+```
+
+You'll be popped into the CINT environment and you should see the following plot pop up!
+
+::::::::::::: callout
+
+## TBrowser
+
+![](fig/h_pt.png)
+
+::::::::::::
+
+Exit from the container. If you are using a container with VNC, first stop VNC with `stop_vnc`.
 
 ::::::::::::::::: keypoints
 - You can quickly inspect your data using just ROOT
