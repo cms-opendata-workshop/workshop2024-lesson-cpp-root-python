@@ -650,7 +650,7 @@ on <a href="https://en.wikipedia.org/wiki/Standard_streams" class="external-link
   Full source code file for hello_world.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1049,7 +1049,7 @@ this:</p>
   Full source code file for write_ROOT_file.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1204,7 +1204,7 @@ line of your <code>my_root</code> container shell!</p>
   Output from write_ROOT_file
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1387,7 +1387,7 @@ like this:</p>
   Full source code file for read_ROOT_file.cc
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1498,7 +1498,7 @@ random numbers that make up the values.</p>
   Output of read_ROOT_file
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1807,6 +1807,253 @@ graphics window with</p>
 </div>
 <p>and connect to it with the default password
 <code>cms.cern</code>.</p>
+<p>To inspect this new ROOT file, we’ll launch CINT for the first time
+and create a <a href="https://root.cern.ch/doc/master/classTBrowser.html" class="external-link"><code>TBrowser</code>
+object</a>.</p>
+<p>On the command line, run the following to launch CINT and attach our
+new ROOT file.</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">root</span> <span class="at">-l</span> output.root</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>root [0]
+Attaching file output.root as _file0...
+root [1]</code></pre>
+</div>
+<p>You can either type C++/ROOT commands or launch a
+<code>TBrowser</code>, which is a graphical tool to inspect ROOT files.
+Inside this CINT environment, type the following (without the
+<code>root [1]</code>, as that is just the ROOT/CINT prompt).</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>root <span class="op">[</span><span class="dv">1</span><span class="op">]</span> TBrowser b<span class="op">;</span></span></code></pre>
+</div>
+<p>You should see the <code>TBrowser</code> pop up!</p>
+<div id="tbrowser" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="tbrowser" class="callout-inner">
+<h3 class="callout-title">TBrowser<a class="anchor" aria-label="anchor" href="#tbrowser"></a>
+</h3>
+<div class="callout-content">
+<figure><img src="../fig/tbrowser_screenshot_00.png" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+<p>If we double click on <code>output.root</code>, in the left-hand menu
+and then the <code>h1;1</code> that appears below it, we should see the
+following plot appear!</p>
+<div id="inspecting-the-root-file-contents" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="inspecting-the-root-file-contents" class="callout-inner">
+<h3 class="callout-title">Inspecting the ROOT file contents<a class="anchor" aria-label="anchor" href="#inspecting-the-root-file-contents"></a>
+</h3>
+<div class="callout-content">
+<figure><img src="../fig/tbrowser_screenshot_01.png" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+<p>Quit ROOT by choosing the “Quit Root” option from Browser menu of the
+TBrowser window or by typing <code>.q</code> in the ROOT prompt.</p>
+<div id="work-assignment-investigating-data-in-root-files" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="work-assignment-investigating-data-in-root-files" class="callout-inner">
+<h3 class="callout-title">Work assignment: investigating data in ROOT files<a class="anchor" aria-label="anchor" href="#work-assignment-investigating-data-in-root-files"></a>
+</h3>
+<div class="callout-content">
+<p>In the previous episode you generated a file called
+<code>tree.root</code>. It has some variables which were stored in a
+TTree called <code>t1</code>. Let’s explore the variables contained in
+this tree by using one of the methods available for TTree objects. You
+can find out more about these methods directly from the <a href="https://root.cern.ch/doc/master/classTTree.html" class="external-link">ROOT TTree class
+documentation</a>.</p>
+<p>Open the <code>tree.root</code> file with ROOT:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">root</span> <span class="at">-l</span> tree.root</span></code></pre>
+</div>
+<p>Now, dump the content of the <code>t1</code> tree with the method
+<code>Print</code>. Note that, by opening the file, the ROOT tree in
+there is automatically loaded.</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>root <span class="op">[</span><span class="dv">0</span><span class="op">]</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>Attaching file tree<span class="op">.</span>root as _file0<span class="op">...</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>root <span class="op">[</span><span class="dv">1</span><span class="op">]</span> t1<span class="op">-&gt;</span>Print<span class="op">()</span></span></code></pre>
+</div>
+<p>Please copy the output this statement generates and paste it into the
+corresponding section in our <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxsc-aIWqUyFA0qTsnbfQrA6wROtAxC5Id4sxH08STTl8e5w/viewform" class="external-link">assignment
+form</a>; remember you must sign in and
+<strong style="color: red;">click on the submit button</strong> in order
+to save your work. You can go back to edit the form at any time. Then,
+quit ROOT.</p>
+</div>
+</div>
+</div>
+</section><section id="using-a-root-script"><h2 class="section-heading">Using a ROOT script<a class="anchor" aria-label="anchor" href="#using-a-root-script"></a>
+</h2>
+<hr class="half-width">
+<p>We could also loop over all the events, create and save the
+histogram, but also draw the histogram onto a <code>TCanvas</code>
+object and have it pop up, all from a ROOT script and the CINT.</p>
+<p>First, let’s copy over our C++ source code into a C++ script.</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">cp</span> fill_histogram.cc fill_histogram_SCRIPT.C</span></code></pre>
+</div>
+<p>Next we’ll remove the headers at the beginning and even get rid of
+the <code>int main</code> designation, though we keep the curly
+brackets.</p>
+<p>We’ll also define a <code>TCanvas</code> object on which we’ll plot
+our histogram. After we do that, we “change directory” to the canvas and
+draw our histogram. We can even save it to a <code>.png</code> file.</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>   <span class="co">// Declare a TCanvas with the following arguments</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>   <span class="co">// * Internal name of the TCanvas object</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>   <span class="co">// * Title to be displayed when it is drawn</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>   <span class="co">// * Width of the canvas</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>   <span class="co">// * Height of the canvas</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>   TCanvas <span class="op">*</span>c1 <span class="op">=</span> <span class="kw">new</span> TCanvas<span class="op">(</span><span class="st">"c1"</span><span class="op">,</span> <span class="st">"Canvas on which to display our histogram"</span><span class="op">,</span> <span class="dv">800</span><span class="op">,</span> <span class="dv">400</span><span class="op">);</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>   c1<span class="op">-&gt;</span>cd<span class="op">(</span><span class="dv">0</span><span class="op">);</span></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>   h1<span class="op">.</span>Draw<span class="op">();</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>   c1<span class="op">-&gt;</span>SaveAs<span class="op">(</span><span class="st">"h_pt.png"</span><span class="op">);</span></span></code></pre>
+</div>
+<p>Your <code>fill_histogram_SCRIPT.C</code> should look like this:</p>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Source code for fill_histogram_SCRIPT.C
+  </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="co">// Here's the input file</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>  <span class="co">// Without the 'recreate' argument, ROOT will assume this file exists to be read in.</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>  TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">);</span></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>  <span class="co">// Let's make an output file which we'll use to save our</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>  <span class="co">// histogram</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>  TFile fout<span class="op">(</span><span class="st">"output.root"</span><span class="op">,</span><span class="st">"recreate"</span><span class="op">);</span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>  <span class="co">// We define an histogram for the transverse momentum of the jets</span></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>  <span class="co">// The arguments are as follow</span></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>  <span class="co">// * Internal name of the histogram</span></span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a>  <span class="co">// * Title that will be used if the histogram is plotted</span></span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a>  <span class="co">// * Number of bins</span></span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>  <span class="co">// * Low edge of the lowest bin</span></span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a>  <span class="co">// * High edge of the highest bin</span></span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a>  TH1F h1<span class="op">(</span><span class="st">"h1"</span><span class="op">,</span><span class="st">"jet pT (GeV/c)"</span><span class="op">,</span><span class="dv">50</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">150</span><span class="op">);</span></span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a>  <span class="co">// We will now "Get" the tree from the file and assign it to</span></span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a>  <span class="co">// a new local variable.</span></span>
+<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a>  TTree <span class="op">*</span>input_tree <span class="op">=</span> <span class="op">(</span>TTree<span class="op">*)</span>f<span class="op">.</span>Get<span class="op">(</span><span class="st">"t1"</span><span class="op">);</span></span>
+<span id="cb18-23"><a href="#cb18-23" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" tabindex="-1"></a>  <span class="dt">Float_t</span> met<span class="op">;</span> <span class="co">// Missing energy in the transverse direction.</span></span>
+<span id="cb18-25"><a href="#cb18-25" tabindex="-1"></a></span>
+<span id="cb18-26"><a href="#cb18-26" tabindex="-1"></a>  <span class="dt">Int_t</span> njets<span class="op">;</span> <span class="co">// Necessary to keep track of the number of jets</span></span>
+<span id="cb18-27"><a href="#cb18-27" tabindex="-1"></a></span>
+<span id="cb18-28"><a href="#cb18-28" tabindex="-1"></a>  <span class="co">// We'll define these assuming we will not write information for</span></span>
+<span id="cb18-29"><a href="#cb18-29" tabindex="-1"></a>  <span class="co">// more than 16 jets. We'll have to check for this in the code otherwise</span></span>
+<span id="cb18-30"><a href="#cb18-30" tabindex="-1"></a>  <span class="co">// it could crash!</span></span>
+<span id="cb18-31"><a href="#cb18-31" tabindex="-1"></a>  <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb18-32"><a href="#cb18-32" tabindex="-1"></a>  <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb18-33"><a href="#cb18-33" tabindex="-1"></a>  <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb18-34"><a href="#cb18-34" tabindex="-1"></a></span>
+<span id="cb18-35"><a href="#cb18-35" tabindex="-1"></a>     <span class="co">// Assign these variables to specific branch addresses</span></span>
+<span id="cb18-36"><a href="#cb18-36" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"met"</span><span class="op">,&amp;</span>met<span class="op">);</span></span>
+<span id="cb18-37"><a href="#cb18-37" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"njets"</span><span class="op">,&amp;</span>njets<span class="op">);</span></span>
+<span id="cb18-38"><a href="#cb18-38" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"pt"</span><span class="op">,&amp;</span>pt<span class="op">);</span></span>
+<span id="cb18-39"><a href="#cb18-39" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"eta"</span><span class="op">,&amp;</span>eta<span class="op">);</span></span>
+<span id="cb18-40"><a href="#cb18-40" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"phi"</span><span class="op">,&amp;</span>phi<span class="op">);</span></span>
+<span id="cb18-41"><a href="#cb18-41" tabindex="-1"></a></span>
+<span id="cb18-42"><a href="#cb18-42" tabindex="-1"></a>  <span class="co">// Get the number of events in the file</span></span>
+<span id="cb18-43"><a href="#cb18-43" tabindex="-1"></a>  <span class="dt">Int_t</span> nevents <span class="op">=</span> input_tree<span class="op">-&gt;</span>GetEntries<span class="op">();</span></span>
+<span id="cb18-44"><a href="#cb18-44" tabindex="-1"></a></span>
+<span id="cb18-45"><a href="#cb18-45" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb18-46"><a href="#cb18-46" tabindex="-1"></a></span>
+<span id="cb18-47"><a href="#cb18-47" tabindex="-1"></a>      <span class="co">// Get the values for the i`th event and fill all our local variables</span></span>
+<span id="cb18-48"><a href="#cb18-48" tabindex="-1"></a>      <span class="co">// that were assigned to TBranches</span></span>
+<span id="cb18-49"><a href="#cb18-49" tabindex="-1"></a>      input_tree<span class="op">-&gt;</span>GetEntry<span class="op">(</span>i<span class="op">);</span></span>
+<span id="cb18-50"><a href="#cb18-50" tabindex="-1"></a></span>
+<span id="cb18-51"><a href="#cb18-51" tabindex="-1"></a>      <span class="co">// Print the number of jets in this event</span></span>
+<span id="cb18-52"><a href="#cb18-52" tabindex="-1"></a>      printf<span class="op">(</span><span class="st">"</span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span>njets<span class="op">);</span></span>
+<span id="cb18-53"><a href="#cb18-53" tabindex="-1"></a></span>
+<span id="cb18-54"><a href="#cb18-54" tabindex="-1"></a>      <span class="co">// Print out the momentum for each jet in this event</span></span>
+<span id="cb18-55"><a href="#cb18-55" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span>njets<span class="op">;</span>j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb18-56"><a href="#cb18-56" tabindex="-1"></a>          printf<span class="op">(</span><span class="st">"</span><span class="sc">%f</span><span class="st">,</span><span class="sc">%f</span><span class="st">,</span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span>pt<span class="op">[</span>j<span class="op">],</span> eta<span class="op">[</span>j<span class="op">],</span> phi<span class="op">[</span>j<span class="op">]);</span></span>
+<span id="cb18-57"><a href="#cb18-57" tabindex="-1"></a></span>
+<span id="cb18-58"><a href="#cb18-58" tabindex="-1"></a>          <span class="co">// Fill the histogram with each value of pT</span></span>
+<span id="cb18-59"><a href="#cb18-59" tabindex="-1"></a>          h1<span class="op">.</span>Fill<span class="op">(</span>pt<span class="op">[</span>j<span class="op">]);</span></span>
+<span id="cb18-60"><a href="#cb18-60" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb18-61"><a href="#cb18-61" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb18-62"><a href="#cb18-62" tabindex="-1"></a></span>
+<span id="cb18-63"><a href="#cb18-63" tabindex="-1"></a>  <span class="co">// Declare a TCanvas with the following arguments</span></span>
+<span id="cb18-64"><a href="#cb18-64" tabindex="-1"></a>  <span class="co">// * Internal name of the TCanvas object</span></span>
+<span id="cb18-65"><a href="#cb18-65" tabindex="-1"></a>  <span class="co">// * Title to be displayed when it is drawn</span></span>
+<span id="cb18-66"><a href="#cb18-66" tabindex="-1"></a>  <span class="co">// * Width of the canvas</span></span>
+<span id="cb18-67"><a href="#cb18-67" tabindex="-1"></a>  <span class="co">// * Height of the canvas</span></span>
+<span id="cb18-68"><a href="#cb18-68" tabindex="-1"></a>  TCanvas <span class="op">*</span>c1 <span class="op">=</span> <span class="kw">new</span> TCanvas<span class="op">(</span><span class="st">"c1"</span><span class="op">,</span> <span class="st">"Canvas on which to display our histogram"</span><span class="op">,</span> <span class="dv">800</span><span class="op">,</span> <span class="dv">400</span><span class="op">);</span></span>
+<span id="cb18-69"><a href="#cb18-69" tabindex="-1"></a></span>
+<span id="cb18-70"><a href="#cb18-70" tabindex="-1"></a>  c1<span class="op">-&gt;</span>cd<span class="op">(</span><span class="dv">0</span><span class="op">);</span></span>
+<span id="cb18-71"><a href="#cb18-71" tabindex="-1"></a>  h1<span class="op">.</span>Draw<span class="op">();</span></span>
+<span id="cb18-72"><a href="#cb18-72" tabindex="-1"></a>  c1<span class="op">-&gt;</span>SaveAs<span class="op">(</span><span class="st">"h_pt.png"</span><span class="op">);</span></span>
+<span id="cb18-73"><a href="#cb18-73" tabindex="-1"></a></span>
+<span id="cb18-74"><a href="#cb18-74" tabindex="-1"></a>  fout<span class="op">.</span>cd<span class="op">();</span></span>
+<span id="cb18-75"><a href="#cb18-75" tabindex="-1"></a>  h1<span class="op">.</span>Write<span class="op">();</span></span>
+<span id="cb18-76"><a href="#cb18-76" tabindex="-1"></a>  fout<span class="op">.</span>Close<span class="op">();</span></span>
+<span id="cb18-77"><a href="#cb18-77" tabindex="-1"></a></span>
+<span id="cb18-78"><a href="#cb18-78" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>To run this, you need only type the following on the command
+line.</p>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">root</span> <span class="at">-l</span> fill_histogram_SCRIPT.C</span></code></pre>
+</div>
+<p>You’ll be popped into the CINT environment and you should see the
+following plot pop up!</p>
+<div id="tbrowser-1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="tbrowser-1" class="callout-inner">
+<h3 class="callout-title">TBrowser<a class="anchor" aria-label="anchor" href="#tbrowser-1"></a>
+</h3>
+<div class="callout-content">
+<figure><img src="../fig/h_pt.png" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+<p>Exit from the container. If you are using a container with VNC, first
+stop VNC with <code>stop_vnc</code>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
