@@ -33,7 +33,7 @@ of your file.
 
 ## Environment
 
-We'll assume that you have a working, modern python environmnt such as the Python docker container you installed, called `my_python1.
+Use the Python environment that you set up in the previous two lesson pages, such as your `my_python` docker container.
 We leave it up to you whether or not you write and execute this code in a script or as a Jupyter notebook.
 
 ## Numpy arrays: a review
@@ -41,7 +41,7 @@ We leave it up to you whether or not you write and execute this code in a script
 Before we dive into `awkward` lets review some of the awsome aspects of `numpy`
 arrays...and also examine their limitations. 
 
-Let's import `numpy`.
+Let's import `numpy` (if you have not already done that in this python session).
 
 ```python
 import numpy as np
@@ -145,7 +145,7 @@ or by downloading it.
 ## Open the file
 
 ::::::::::::::::::::::::: prereq
-## *Stop!* Prerequisite:
+## *Stop!* 
 
 If you haven't already, make sure you have run through the 
 [previous lesson](https://cms-opendata-workshop.github.io/workshop2024-lesson-cpp-root-python/06-uproot/index.html) on working with uproot.
