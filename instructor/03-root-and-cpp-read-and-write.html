@@ -18,17 +18,7 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="dpoa-logo" alt="CMS DPOA logo" src="../assets/images/dpoa-logo.png"><span class="badge text-bg-info">
-          <abbr title="This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.">
-            <a href="https://cdh.carpentries.org/the-lesson-life-cycle.html#polishing-beta-stage" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-circle" style="border-radius: 5px"></i>
-              Beta
-            </a>
-            <span class="visually-hidden">This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.</span>
-          </abbr>
-        </span>
-        
-      </div>
+        <img id="dpoa-logo" alt="CMS DPOA logo" src="../assets/images/dpoa-logo.png"></div>
     </div>
     <div class="selector-container">
       <div id="theme-selector">
@@ -56,7 +46,7 @@
             </li>
           </ul></li>
       </div>
-      
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View <i data-feather="chevron-down"></i>
@@ -179,7 +169,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -198,7 +188,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Schedule</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -207,7 +197,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="introduction.html">1. Introduction</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -216,7 +206,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="02-cpp-hello-world.html">2. Lightning overview of C++</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -230,7 +220,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#why-root">Why ROOT?</a></li>
@@ -242,7 +232,7 @@
 <li><a href="#read-a-root-file">Read a ROOT file</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -251,7 +241,7 @@
     <div class="accordion-header" id="flush-heading5">
         <a href="04-root-and-cpp-fill-a-histogram.html">4. Using ROOT with C++ to fill a histogram</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -260,7 +250,7 @@
     <div class="accordion-header" id="flush-heading6">
         <a href="05-going-further-with-pyroot.html">5. Using ROOT with python</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -269,7 +259,7 @@
     <div class="accordion-header" id="flush-heading7">
         <a href="06-uproot.html">6. Using uproot to open ROOT files</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -278,7 +268,7 @@
     <div class="accordion-header" id="flush-heading8">
         <a href="07-awkward.html">7. Using awkward arrays to analyze HEP data</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -309,10 +299,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -333,20 +323,20 @@
           Previous: Lightning overview
         </a>
         <a class="chapter-link float-end" href="../instructor/04-root-and-cpp-fill-a-histogram.html" rel="next">
-          Next: Using ROOT with C++... 
+          Next: Using ROOT with C++...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using ROOT with C++ to write and read a file</h1>
         <p>Last updated on 2024-07-02 |
-        
+
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/03-root-and-cpp-read-and-write.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
-        
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -376,8 +366,8 @@
 </div>
 </div>
 </div>
-<section id="why-root"><h2 class="section-heading">Why ROOT?<a class="anchor" aria-label="anchor" href="#why-root"></a>
-</h2>
+<section><h2 class="section-heading" id="why-root">Why ROOT?<a class="anchor" aria-label="anchor" href="#why-root"></a>
+<a class="anchor" aria-label="anchor" href="#why-root"></a></h2>
 <hr class="half-width"><p>HEP data can be challenging! Not just to analyze but to store! The
 data don’t lend themselves to neat rows in a spreadsheet. One event
 might have 3 muons and the next event might have none. One event might
@@ -391,8 +381,8 @@ provided by CMS to read the open data relies on some minimal knowledge
 of ROOT to access. From there, you can write out more ROOT files for
 further analysis or dump the data (or some subset of the data) to a
 format of your choosing.</p>
-</section><section id="interfacing-with-root"><h2 class="section-heading">Interfacing with ROOT<a class="anchor" aria-label="anchor" href="#interfacing-with-root"></a>
-</h2>
+</section><section><h2 class="section-heading" id="interfacing-with-root">Interfacing with ROOT<a class="anchor" aria-label="anchor" href="#interfacing-with-root"></a>
+<a class="anchor" aria-label="anchor" href="#interfacing-with-root"></a></h2>
 <hr class="half-width"><p>ROOT is a toolkit. That is, it is a set of functions and libraries
 that can be utilized in a variety of languages and workflows. It was
 originally written in C++ and lends itself nicely to being used in
@@ -412,8 +402,8 @@ bindings were written and eventually officially supported by the ROOT
 development team, called <a href="https://root.cern/manual/python/" class="external-link">PyROOT</a>. Many analysts
 currently write the code which plots or fits their code using PyROOT,
 and we will show you some examples later in this exercise.</p>
-</section><section id="what-wont-you-learn-here"><h2 class="section-heading">What won’t you learn here<a class="anchor" aria-label="anchor" href="#what-wont-you-learn-here"></a>
-</h2>
+</section><section><h2 class="section-heading" id="what-wont-you-learn-here">What won’t you learn here<a class="anchor" aria-label="anchor" href="#what-wont-you-learn-here"></a>
+<a class="anchor" aria-label="anchor" href="#what-wont-you-learn-here"></a></h2>
 <hr class="half-width"><p>ROOT is an incredibly powerful toolkit and has <em>a lot</em> in it.
 It is heavily used by most nuclear and particle physics experiments
 running today. As such, a full overview is beyond the scope of this
@@ -421,8 +411,8 @@ minimal tutorial!</p>
 <p>This tutorial will <em>not</em> teach you how to * Make any plots
 more sophisticated than a basic histogram. * Fit your data * Use any of
 the HEP-specific libraries (e.g. <code>TLorentzVector</code>)</p>
-</section><section id="ok-where-can-i-learn-that-stuff"><h2 class="section-heading">OK, where <em>can</em> I learn that stuff?<a class="anchor" aria-label="anchor" href="#ok-where-can-i-learn-that-stuff"></a>
-</h2>
+</section><section><h2 class="section-heading" id="ok-where-can-i-learn-that-stuff">OK, where <em>can</em> I learn that stuff?<a class="anchor" aria-label="anchor" href="#ok-where-can-i-learn-that-stuff"></a>
+<a class="anchor" aria-label="anchor" href="#ok-where-can-i-learn-that-stuff"></a></h2>
 <hr class="half-width"><p>There are some great resources and tutorials out there for going
 further.</p>
 <ul><li>
@@ -465,8 +455,8 @@ preferred editors.</p>
 </div>
 </div>
 </div>
-</section><section id="root-terminology"><h2 class="section-heading">ROOT terminology<a class="anchor" aria-label="anchor" href="#root-terminology"></a>
-</h2>
+</section><section><h2 class="section-heading" id="root-terminology">ROOT terminology<a class="anchor" aria-label="anchor" href="#root-terminology"></a>
+<a class="anchor" aria-label="anchor" href="#root-terminology"></a></h2>
 <hr class="half-width"><p>To store these datasets, ROOT uses an object called
 <code>TTree</code> (ROOT objects are often prefixed by a
 <code>T</code>).</p>
@@ -504,8 +494,8 @@ or download it directly with <code>wget</code> to you working directory
 </div>
 </div>
 </div>
-</section><section id="write-to-a-file"><h2 class="section-heading">Write to a file<a class="anchor" aria-label="anchor" href="#write-to-a-file"></a>
-</h2>
+</section><section><h2 class="section-heading" id="write-to-a-file">Write to a file<a class="anchor" aria-label="anchor" href="#write-to-a-file"></a>
+<a class="anchor" aria-label="anchor" href="#write-to-a-file"></a></h2>
 <hr class="half-width"><p>Let’s create a file with name <code>write_ROOT_file.cc</code> using
 our preferred editor. We’ll call this file
 <code>write_ROOT_file.cc</code> and it will be saved in the
@@ -873,8 +863,8 @@ upcoming lesson pages!), then you will not use <code>make</code>
 </ul></div>
 </div>
 </div>
-</section><section id="read-a-root-file"><h2 class="section-heading">Read a ROOT file<a class="anchor" aria-label="anchor" href="#read-a-root-file"></a>
-</h2>
+</section><section><h2 class="section-heading" id="read-a-root-file">Read a ROOT file<a class="anchor" aria-label="anchor" href="#read-a-root-file"></a>
+<a class="anchor" aria-label="anchor" href="#read-a-root-file"></a></h2>
 <hr class="half-width"><p>Let’s try to read the <code>tree.root</code> file now. We won’t do
 much with but we’ll try to understand the process necessary to read in
 all the data and loop over this event-by-event.</p>
@@ -1160,9 +1150,9 @@ information can be dumped out into other formats.</li>
 </ul></div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -1176,7 +1166,7 @@ any links that you are not going to use.
           Previous: Lightning overview
         </a>
         <a class="chapter-link float-end" href="../instructor/04-root-and-cpp-fill-a-histogram.html" rel="next">
-          Next: Using ROOT with C++... 
+          Next: Using ROOT with C++...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1187,18 +1177,18 @@ any links that you are not going to use.
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/03-root-and-cpp-read-and-write.md" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/cms-opendata-workshop/workbench-template-md/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/cms-opendata-workshop/workbench-template-md/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/cms-opendata-workshop/workbench-template-md/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:cms-dpoa-coordinator@cern.ch">Contact</a> | <a href="https://opendata.cern.ch/docs/about-cms" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/cms-opendata-workshop/varnish/tree/405b7a74ee1b2fc89c3e49e116ce96d4d65182b3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
@@ -1223,7 +1213,7 @@ any links that you are not going to use.
   "identifier": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/03-root-and-cpp-read-and-write.html",
   "dateCreated": "2024-07-29",
   "dateModified": "2024-07-02",
-  "datePublished": "2024-07-02"
+  "datePublished": "2024-07-08"
 }
 
   </script><script>
