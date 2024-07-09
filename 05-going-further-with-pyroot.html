@@ -395,10 +395,29 @@ working directory <code>cms_open_data_python</code> mounted into the
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_python</span></code></pre>
 </div>
-<p>{: .language-bash}</p>
 <p>In the container, you will be in the <code>/code</code> directory and
 it shares the files with your local <code>cms_open_data_python</code>
 directory.</p>
+<div id="if-youre-using-apptainer" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="if-youre-using-apptainer" class="callout-inner">
+<h3 class="callout-title">If you’re using apptainer:<a class="anchor" aria-label="anchor" href="#if-youre-using-apptainer"></a>
+</h3>
+<div class="callout-content">
+<p>Whenever you see a <code>docker start</code> instruction, replace it
+with <code>apptainer shell</code> to open either the ROOT or Python
+container image. The specific commands in this pre-exercise and during
+the live workshop will be given for docker, since that is the most
+common application. As a general rule, editing of files will be done in
+the standard terminal (the containers do not have all text editors!) or
+via the jupyter-lab interface, and then commands will be executed inside
+the container shell. If you see <code>Singularity&gt;</code> on your
+command line, you are ready to run a ROOT or python script.</p>
+</div>
+</div>
+</div>
 <p>If you want to test out the installation, from within Docker you can
 launch and interactive python session by typing <code>python</code> (in
 Docker) and then trying</p>

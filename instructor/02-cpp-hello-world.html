@@ -324,7 +324,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Lightning overview of C++</h1>
-        <p>Last updated on 2024-07-02 |
+        <p>Last updated on 2024-07-09 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/02-cpp-hello-world.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -371,11 +371,34 @@ computer</li>
 working directory <code>cms_open_data_root</code> mounted into the
 <code>/code</code> directory of the container.</li>
 </ul><p>Start your ROOT container with</p>
-<pre><code>docker start -i my_root</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
+</div>
 <p>In the container, you will be in the <code>/code</code> directory and
 it shares the files with your local <code>cms_open_data_root</code>
 directory.</p>
+<div id="if-youre-using-apptainer" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="if-youre-using-apptainer" class="callout-inner">
+<h3 class="callout-title">If you’re using apptainer:<a class="anchor" aria-label="anchor" href="#if-youre-using-apptainer"></a>
+</h3>
+<div class="callout-content">
+<p>Whenever you see a <code>docker start</code> instruction, replace it
+with <code>apptainer shell</code> to open either the ROOT or Python
+container image. The specific commands in this pre-exercise and during
+the live workshop will be given for docker, since that is the most
+common application. As a general rule, editing of files will be done in
+the standard terminal (the containers do not have all text editors!) or
+via the jupyter-lab interface, and then commands will be executed inside
+the container shell. If you see <code>Singularity&gt;</code> on your
+command line, you are ready to run a ROOT or python script.</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="your-first-cc-program-optional-review">Your first C/C++ program (Optional Review!)<a class="anchor" aria-label="anchor" href="#your-first-cc-program-optional-review"></a>
 <a class="anchor" aria-label="anchor" href="#your-first-cc-program-optional-review"></a></h2>
 <hr class="half-width"><p>Let’s start with writing a simple <code>hello world</code> program in
@@ -468,7 +491,7 @@ on <a href="https://en.wikipedia.org/wiki/Standard_streams" class="external-link
   Full source code file for hello_world.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -599,7 +622,7 @@ any links that you are not going to use.
   "url": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/02-cpp-hello-world.html",
   "identifier": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/02-cpp-hello-world.html",
   "dateCreated": "2024-07-29",
-  "dateModified": "2024-07-02",
+  "dateModified": "2024-07-09",
   "datePublished": "2024-07-09"
 }
 

@@ -498,7 +498,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-cpp-hello-world"><p>Content from <a href="02-cpp-hello-world.html">Lightning overview of C++</a></p>
 <hr>
-<p>Last updated on 2024-07-02 |
+<p>Last updated on 2024-07-09 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/02-cpp-hello-world.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -546,11 +546,34 @@ working directory <code>cms_open_data_root</code> mounted into the
 <code>/code</code> directory of the container.</li>
 </ul>
 <p>Start your ROOT container with</p>
-<pre><code>docker start -i my_root</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
+</div>
 <p>In the container, you will be in the <code>/code</code> directory and
 it shares the files with your local <code>cms_open_data_root</code>
 directory.</p>
+<div id="if-youre-using-apptainer" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="if-youre-using-apptainer" class="callout-inner">
+<h3 class="callout-title">If you’re using apptainer:<a class="anchor" aria-label="anchor" href="#if-youre-using-apptainer"></a>
+</h3>
+<div class="callout-content">
+<p>Whenever you see a <code>docker start</code> instruction, replace it
+with <code>apptainer shell</code> to open either the ROOT or Python
+container image. The specific commands in this pre-exercise and during
+the live workshop will be given for docker, since that is the most
+common application. As a general rule, editing of files will be done in
+the standard terminal (the containers do not have all text editors!) or
+via the jupyter-lab interface, and then commands will be executed inside
+the container shell. If you see <code>Singularity&gt;</code> on your
+command line, you are ready to run a ROOT or python script.</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="your-first-cc-program-optional-review">Your first C/C++ program (Optional Review!)<a class="anchor" aria-label="anchor" href="#your-first-cc-program-optional-review"></a>
 <a class="anchor" aria-label="anchor" href="#your-first-cc-program-optional-review"></a>
 </h2>
@@ -645,7 +668,7 @@ on <a href="https://en.wikipedia.org/wiki/Standard_streams" class="external-link
   Full source code file for hello_world.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -804,10 +827,13 @@ and we will show you some examples later in this exercise.</p>
 It is heavily used by most nuclear and particle physics experiments
 running today. As such, a full overview is beyond the scope of this
 minimal tutorial!</p>
-<p>This tutorial will <em>not</em> teach you how to * Make any plots
-more sophisticated than a basic histogram. * Fit your data * Use any of
-the HEP-specific libraries (e.g. <code>TLorentzVector</code>)</p>
-</section><section><h2 class="section-heading" id="ok-where-can-i-learn-that-stuff">OK, where <em>can</em> I learn that stuff?<a class="anchor" aria-label="anchor" href="#ok-where-can-i-learn-that-stuff"></a>
+<p>This tutorial will <em>not</em> teach you how to:</p>
+<ul>
+<li>Make any plots more sophisticated than a basic histogram.</li>
+<li>Fit your data</li>
+<li>Use any of the HEP-specific libraries
+(e.g. <code>TLorentzVector</code>)</li>
+</ul></section><section><h2 class="section-heading" id="ok-where-can-i-learn-that-stuff">OK, where <em>can</em> I learn that stuff?<a class="anchor" aria-label="anchor" href="#ok-where-can-i-learn-that-stuff"></a>
 <a class="anchor" aria-label="anchor" href="#ok-where-can-i-learn-that-stuff"></a>
 </h2>
 <hr class="half-width">
@@ -838,12 +864,12 @@ the tutorial.</li>
 tutorial from Nevis Lab (Columbia Univ.)</a>. Very complete and always
 up-to-date tutorial from our friends at Columbia.</li>
 </ul>
-<div id="be-in-docker" class="callout">
+<div id="be-in-the-container" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="be-in-docker" class="callout-inner">
-<h3 class="callout-title">Be in Docker!<a class="anchor" aria-label="anchor" href="#be-in-docker"></a>
+<div id="be-in-the-container" class="callout-inner">
+<h3 class="callout-title">Be in the container!<a class="anchor" aria-label="anchor" href="#be-in-the-container"></a>
 </h3>
 <div class="callout-content">
 <p>For this episode, you’ll still be running your code from the
@@ -2154,10 +2180,29 @@ working directory <code>cms_open_data_python</code> mounted into the
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_python</span></code></pre>
 </div>
-<p>{: .language-bash}</p>
 <p>In the container, you will be in the <code>/code</code> directory and
 it shares the files with your local <code>cms_open_data_python</code>
 directory.</p>
+<div id="if-youre-using-apptainer" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="if-youre-using-apptainer" class="callout-inner">
+<h3 class="callout-title">If you’re using apptainer:<a class="anchor" aria-label="anchor" href="#if-youre-using-apptainer"></a>
+</h3>
+<div class="callout-content">
+<p>Whenever you see a <code>docker start</code> instruction, replace it
+with <code>apptainer shell</code> to open either the ROOT or Python
+container image. The specific commands in this pre-exercise and during
+the live workshop will be given for docker, since that is the most
+common application. As a general rule, editing of files will be done in
+the standard terminal (the containers do not have all text editors!) or
+via the jupyter-lab interface, and then commands will be executed inside
+the container shell. If you see <code>Singularity&gt;</code> on your
+command line, you are ready to run a ROOT or python script.</p>
+</div>
+</div>
+</div>
 <p>If you want to test out the installation, from within Docker you can
 launch and interactive python session by typing <code>python</code> (in
 Docker) and then trying</p>
@@ -2827,7 +2872,7 @@ there is a faster way!</p>
   Python code (event loop)
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2934,7 +2979,7 @@ how much faster using the built-in awkward functions can be:</p>
   Python code (awkward array)
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
