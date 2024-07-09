@@ -2,8 +2,6 @@
 site: sandpaper::sandpaper_site
 ---
 
-<img src="https://github.com/cms-opendata-workshop/workshop2024-lesson-cpp-root-python/blob/97e1e12b8e0419fd1f37d9a684271979c0670525/episodes/fig/cpp_and_root_uproot_awkward_logo.png" alt="C++ and ROOT pre-exercise logo" width="50%">
-
 These pre-exercises are designed to prepare you for working with ROOT files and the broader
 ROOT analysis library in two separate contexts:
 editing and running much of the pre-existing code used to access
