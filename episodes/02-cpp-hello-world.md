@@ -27,13 +27,21 @@ you should already have worked through
 
 Start your ROOT container with
 
-```
+```bash
 docker start -i my_root
 ```
-{: .language-bash}
 
 In the container, you will be in the `/code` directory and it shares the files with your local `cms_open_data_root` directory.
 
+:::::::::::: callout
+
+## If you're using apptainer:
+
+Whenever you see a `docker start` instruction, replace it with `apptainer shell` to open either the ROOT or Python container image.
+The specific commands in this pre-exercise and during the live workshop will be given for docker, since that is the most common application.
+As a general rule, editing of files will be done in the standard terminal (the containers do not have all text editors!) or via the jupyter-lab interface, and then commands will be executed inside the container shell. If you see `Singularity>` on your command line, you are ready to run a ROOT or python script.
+
+:::::::::::::
 
 ## Your first C/C++ program (Optional Review!)
 
