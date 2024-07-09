@@ -59,7 +59,8 @@ ROOT is an incredibly powerful toolkit and has *a lot* in it. It is heavily used
 nuclear and particle physics experiments running today. As such, a full overview is beyond the
 scope of this minimal tutorial!
 
-This tutorial will *not* teach you how to
+This tutorial will *not* teach you how to:
+
 * Make any plots more sophisticated than a basic histogram.
 * Fit your data
 * Use any of the HEP-specific libraries (e.g. `TLorentzVector`)
@@ -79,7 +80,7 @@ to complete the tutorial.
 * [ROOT tutorial from Nevis Lab (Columbia Univ.)](https://www.nevis.columbia.edu/~seligman/root-class/). Very complete and always up-to-date tutorial from our friends at Columbia.
 
 ::::::::::::::::::: callout
-## Be in Docker!
+## Be in the container!
 For this episode, you'll still be running your code from the `my_root` docker container
 that you launched in the previous episode.
 
