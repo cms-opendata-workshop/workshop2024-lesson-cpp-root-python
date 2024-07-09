@@ -5,13 +5,17 @@ exercises: 20
 ---
 
 :::::::::::::::::::::::::::::: questions
+
 - Why do I need to use ROOT?
 - How do I use ROOT with C++?
+
 ::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::: objectives
+
 - Write a ROOT file using compiled C++ code.
 - Read a ROOT file using compiled C++ code.
+
 ::::::::::::::::::::::::::::::
 
 
@@ -685,6 +689,8 @@ In the next section, we'll take a quick look at how to read in a file and make a
 still using the C++ syntax.
 
 :::::::::::::::::::::::::::::: keypoints
+
 - ROOT defines the file format in which all of the CMS Open Data is stored.
 - These files can be accessed quickly using C++ code and the relevant information can be dumped out into other formats.
+
 ::::::::::::::::::::::::::::::
