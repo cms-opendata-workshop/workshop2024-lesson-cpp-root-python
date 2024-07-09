@@ -5,13 +5,17 @@ exercises: 10
 ---
 
 :::::::::::: questions
+
 - What are awkward arrays?
 - How do I work with awkward arrays?
+
 ::::::::::::
 
 :::::::::::: objectives
+
 - Learn to use awkward arrays in a simple, naive way.
 - Learn to use awkward arrays in a much faster way, making use of the built-in functionality of the library.
+
 ::::::::::::
 
 ::::::::::::::::::: testimonial
@@ -412,5 +416,7 @@ to what it can do and where you can find more information so that you can quickl
 the output of any of your open data jobs and get started on your own analysis!
 
 :::::::::::: keypoints
+
 - Awkward arrays can help speed up your code, but it requires a different way of thinking and more awareness of what functions are coded up in the awkward library.
+
 ::::::::::::

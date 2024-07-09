@@ -5,11 +5,15 @@ exercises: 0
 ---
 
 :::::::::::::: questions
+
 - Can I call ROOT from python?
+
 ::::::::::::::
 
 :::::::::::::: objectives
+
 - Find resources for PyROOT
+
 ::::::::::::::
 
 
@@ -62,5 +66,7 @@ If you don't get any errors then congratulations! You have a working environment
 perform some HEP analysis with your new python environment!
 
 :::::::::::::: keypoints
+
 - PyROOT is a complete interface to the ROOT libraries
+
 ::::::::::::::

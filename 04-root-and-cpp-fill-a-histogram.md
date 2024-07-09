@@ -5,13 +5,17 @@ exercises: 20
 ---
 
 ::::::::::::::::: questions
+
 - Is there more than reading and writing files that can be done with ROOT?
 - How do I run a ROOT script?
+
 :::::::::::::::::
 
 ::::::::::::::::: objectives
+
 - Learn to fill a histogram and save it to a file.
 - Learn to run a simple ROOT script
+
 :::::::::::::::::
 
 ## Filling a histogram
@@ -417,7 +421,9 @@ You'll be popped into the CINT environment and you should see the following plot
 Exit from the container. If you are using a container with VNC, first stop VNC with `stop_vnc`.
 
 ::::::::::::::::: keypoints
+
 - You can quickly inspect your data using just ROOT
 - A simple ROOT script is often all you need for diagnostic work
+
 :::::::::::::::::
 

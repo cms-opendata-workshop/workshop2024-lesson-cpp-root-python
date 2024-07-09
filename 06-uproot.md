@@ -5,13 +5,17 @@ exercises: 10
 ---
 
 ::::::::::: questions
+
 - How do I open a ROOT file with uproot?
 - How do I explore what is in the file?
+
 :::::::::::
 
 ::::::::::: objectives
+
 - Use a different library than ROOT to open ROOT files
 - Get comfortable with a different way of examining ROOT files
+
 :::::::::::
 
 
@@ -230,5 +234,7 @@ In the next episode we'll use the `awkward` array object when we extract these d
 and see how we can use `awkward` in a standard-but-slow way or in a clever-and-fast way!
 
 ::::::::::: keypoints
+
 - You can use uproot to interface with ROOT files which is often easier than installing the full ROOT ecosystem.
+
 :::::::::::
