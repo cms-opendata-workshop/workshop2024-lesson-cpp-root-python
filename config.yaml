@@ -15,7 +15,7 @@ carpentry: 'incubator'
 varnish: 'cms-opendata-workshop/varnish'
 
 # Overall title for pages.
-title: 'ROOT for data analysis' # FIXME
+title: 'Open Data analysis in C++ and Python' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: 2024-07-29 # FIXME
