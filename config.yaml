@@ -67,7 +67,7 @@ episodes:
 - 02-cpp-hello-world.md
 - 03-root-and-cpp-read-and-write.md
 - 04-root-and-cpp-fill-a-histogram.md
-- 05-going-further-with-pyroot.md
+- 05-using-root-with-python.md
 - 06-uproot.md
 - 07-awkward.md
 
