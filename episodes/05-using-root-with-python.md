@@ -13,6 +13,7 @@ exercises: 0
 :::::::::::::: objectives
 
 - Find resources for PyROOT
+- Find resources for Scikit-HEP
 
 ::::::::::::::
 
@@ -85,5 +86,7 @@ perform some HEP analysis with your new python environment!
 :::::::::::::: keypoints
 
 - PyROOT is a complete interface to the ROOT libraries
+- Scikit-HEP provides tools to interface between ROOT and global scientific python tools
+- We will use `uproot`, `awkward`, and `vector` in our NanoAOD analysis
 
 ::::::::::::::
