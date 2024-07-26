@@ -29,7 +29,15 @@ If you want to learn how to use PyROOT, you can go through some individual examp
 [here](https://root.cern.ch/doc/master/group__tutorial__pyroot.html), or a more guided tutorial
 [here](https://root.cern/manual/python/).
 
-Feel free to challenge yourself to rewrite the previous C++ code using PyROOT!
+Feel free to challenge yourself to rewrite the previous C++ code using PyROOT! 
+
+## Scikit-HEP libraries
+
+Over the past several years, an effort has developed to provide more python tools that can interface with CMS ROOT file formats as well as typical scientific python tools used widely beyond particle physics.
+We will use several of the [Scikit-HEP](https://scikit-hep.org/) libraries to analyze NanoAOD: `uproot`, `awkward`, and `vector`. As CMS datasets grow larger, we increasingly rely on tools for array-based 
+data processing in python, and the scikit-HEP tools are very important for that task. 
+
+You can check out a tutorial for many of their tools [here](https://hsf-training.github.io/hsf-training-scikit-hep-webpage/). 
 
 ## Using the Python docker container
 
